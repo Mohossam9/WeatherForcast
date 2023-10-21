@@ -1,0 +1,35 @@
+﻿@model WeatherForcast.Models.City
+<div class="card card-shadow mt-2">
+   <div class="card-body p-4">
+     <h4 class="mb-1 sfw-normal">@Model.Name</h4>
+     <div class="form-group">
+         <label asp-for=Temperature class="form-label" ></label>
+         <strong class="badge alert-primary">@Model.Temperature °C</strong>
+         <div class="mb-2">
+             Max: <strong class="badge alert-primary">@Model.Temperature °C</strong>, Min: <strong class="badge alert-primary">3.89°C</strong>
+         </div>
+     </div>
+
+     <div class="form-group">
+         <label asp-for=Humidity class="form-label" ></label>
+         <strong class="badge alert-primary">@Model.Humidity</strong>   
+     </div>
+     <div class="form-group">
+           <label asp-for=Feels_Like class="form-label"></label>
+           <strong class="badge alert-primary">@Model.Feels_Like</strong>     
+     </div>
+      <div class="form-group">
+            <label asp-for=Wind class="form-label" ></label>
+            <strong class="badge alert-primary">@Model.Wind</strong>
+     </div>
+     <div class="form-group">
+         <label asp-for=Weather class="form-label" ></label>
+         <strong class="badge alert-primary">@Model.Weather</strong>
+         @if(@Model.Weather == "Clouds")
+            {
+                
+            }
+        </div>
+    
+   </div>
+</div>

@@ -1,0 +1,29 @@
+﻿@model WeatherForcast.Models.SearchBy
+@{
+    ViewData["Title"] = "Weather Forcast";
+    var ModelData = ViewBag.Data;
+}
+ <section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-8 col-lg-6 col-xl-4">
+        <div asp-validation-summary=All class="text-danger"></div>
+        <h3 class="mb-4 pb-2 fw-normal">Check the weather forecast</h3>
+        <form asp-action="Index" method="post">
+            <div class="form-group mb-3">
+              <input type="search" asp-for="Name" class="form-control rounded" placeholder="City" aria-label="Search"
+                aria-describedby="search-addon" />
+               <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+           <button type="submit" class="btn-primary btn">Search</button>
+       </form>
+       
+        @if(ModelData != null)
+        {
+           <partial name="_WeatherResult" model=@ModelData/> 
+        }
+
+      </div>
+    </div>
+  </div>
+</section>
